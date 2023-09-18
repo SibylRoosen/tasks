@@ -59,3 +59,8 @@ export function convertYesNo(word: string): boolean | null {
         return null;
     }
 }
+
+export function removeSpaces(frase: string): string {
+    frase = frase.replace(/ /g, "");
+    return frase;
+}
