@@ -3,7 +3,8 @@ import {
     fahrenheitToCelius,
     shout,
     isQuestion,
-    convertYesNo
+    convertYesNo,
+    removeSpaces
 } from "./functions";
 
 describe("Testing the basic functions", () => {
@@ -55,5 +56,10 @@ describe("Testing the basic functions", () => {
         expect(convertYesNo("Nope")).toBe(null);
         expect(convertYesNo("Yesterday")).toBe(null);
         expect(convertYesNo("Maybe")).toBe(null);
+    });
+
+    test("Testing the removeSpaces function", () => {
+        expect(removeSpaces("Hello World")).toBe("HelloWorld");
+        expect(removeSpaces("I love you")).toBe("Iloveyou");
     });
 });
