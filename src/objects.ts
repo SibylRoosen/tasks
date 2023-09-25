@@ -33,7 +33,6 @@ export function makeBlankQuestion(
 export function isCorrect(question: Question, answer: string): boolean {
     const trueAnswer = question.expected.toLowerCase().trim();
     const guessedAnswer = answer.toLowerCase().trim();
-
     return trueAnswer === guessedAnswer;
 }
 
@@ -44,7 +43,13 @@ export function isCorrect(question: Question, answer: string): boolean {
  * be exactly one of the options.
  */
 export function isValid(question: Question, answer: string): boolean {
-    return false;
+    if (question.type === "short_answer_question") {
+        return true;
+    } else if (question.type === "multiple_choice_question") {
+        return question.options.includes(answer);
+    } else {
+        return false;
+    }
 }
 
 /**
@@ -54,7 +59,9 @@ export function isValid(question: Question, answer: string): boolean {
  * name "My First Question" would become "9: My First Q".
  */
 export function toShortForm(question: Question): string {
-    return "";
+    const newString =
+        question.id.toString() + ": " + question.name.substring(0, 10);
+    return newString;
 }
 
 /**
@@ -75,7 +82,16 @@ export function toShortForm(question: Question): string {
  * Check the unit tests for more examples of what this looks like!
  */
 export function toMarkdown(question: Question): string {
-    return "";
+    const newString = "# " + question.name + "\n" + question.body;
+    if (question.type === "multiple_choice_question") {
+        const formatOptions = question.options
+            .map((Option) => "- " + Option)
+            .join("\n");
+        console.log(newString + formatOptions);
+        return newString + "\n" + formatOptions;
+    }
+    console.log(newString);
+    return newString;
 }
 
 /**
@@ -83,7 +99,8 @@ export function toMarkdown(question: Question): string {
  * `newName`.
  */
 export function renameQuestion(question: Question, newName: string): Question {
-    return question;
+    const newQuestion = { ...question, name: newName };
+    return newQuestion;
 }
 
 /**
@@ -92,7 +109,8 @@ export function renameQuestion(question: Question, newName: string): Question {
  * published; if it was published, now it should be not published.
  */
 export function publishQuestion(question: Question): Question {
-    return question;
+    const flipPublished = { ...question, published: !question.published };
+    return flipPublished;
 }
 
 /**
