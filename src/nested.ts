@@ -6,7 +6,8 @@ import { Question, QuestionType } from "./interfaces/question";
  * that are `published`.
  */
 export function getPublishedQuestions(questions: Question[]): Question[] {
-    return [];
+    const publishedQuest = questions.filter((questions) => questions.published);
+    return publishedQuest;
 }
 
 /**
@@ -15,7 +16,13 @@ export function getPublishedQuestions(questions: Question[]): Question[] {
  * `expected`, and an empty array for its `options`.
  */
 export function getNonEmptyQuestions(questions: Question[]): Question[] {
-    return [];
+    const nonEmpty = questions.filter(
+        (questions) =>
+            questions.body !== "" ||
+            questions.expected !== "" ||
+            questions.options.length > 0
+    );
+    return nonEmpty;
 }
 
 /***
@@ -26,7 +33,12 @@ export function findQuestion(
     questions: Question[],
     id: number
 ): Question | null {
-    return null;
+    const foundQuestion = questions.find((obj) => obj.id === id);
+    if (foundQuestion) {
+        return foundQuestion;
+    } else {
+        return null;
+    }
 }
 
 /**
@@ -34,7 +46,8 @@ export function findQuestion(
  * with the given `id`.
  */
 export function removeQuestion(questions: Question[], id: number): Question[] {
-    return [];
+    const noId = questions.filter((question) => question.id !== id);
+    return noId;
 }
 
 /***
@@ -42,21 +55,30 @@ export function removeQuestion(questions: Question[], id: number): Question[] {
  * questions, as an array.
  */
 export function getNames(questions: Question[]): string[] {
-    return [];
+    const names = questions.map((question) => question.name);
+    return names;
 }
 
 /***
  * Consumes an array of questions and returns the sum total of all their points added together.
  */
 export function sumPoints(questions: Question[]): number {
-    return 0;
+    const sumId = questions.reduce((acc, que) => acc + que.points, 0);
+    return sumId;
 }
 
 /***
  * Consumes an array of questions and returns the sum total of the PUBLISHED questions.
  */
 export function sumPublishedPoints(questions: Question[]): number {
-    return 0;
+    const sumPubPoints = questions.reduce((acc: number, que) => {
+        if (que.published) {
+            return acc + que.points;
+        } else {
+            return acc;
+        }
+    }, 0);
+    return sumPubPoints;
 }
 
 /***
