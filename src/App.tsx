@@ -2,15 +2,21 @@ import React from "react";
 import Puck from "./Puck.jpeg";
 import "./App.css";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Button, Col, Container, Row } from "react-bootstrap";
 =======
+=======
+>>>>>>> upstream/task-state
 import { ChangeType } from "./components/ChangeType";
 import { RevealAnswer } from "./components/RevealAnswer";
 import { StartAttempt } from "./components/StartAttempt";
 import { TwoDice } from "./components/TwoDice";
 import { CycleHoliday } from "./components/CycleHoliday";
 import { Counter } from "./components/Counter";
+<<<<<<< HEAD
 >>>>>>> eb40f3eb8827e668c1949ca0c9c13db2f52fe4b4
+=======
+>>>>>>> upstream/task-state
 
 function App(): JSX.Element {
     return (
@@ -18,6 +24,7 @@ function App(): JSX.Element {
             <header className="App-header">
                 UD CISC275 with React Hooks and TypeScript
             </header>
+<<<<<<< HEAD
 <<<<<<< HEAD
             <h1>This is Sibyl Roosens Heading</h1>
             <Container>
@@ -51,6 +58,8 @@ function App(): JSX.Element {
                 automatically reload. Hello World
             </p>
 =======
+=======
+>>>>>>> upstream/task-state
             <hr></hr>
             <Counter></Counter>
             <hr />
@@ -63,7 +72,10 @@ function App(): JSX.Element {
             <ChangeType></ChangeType>
             <hr />
             <CycleHoliday></CycleHoliday>
+<<<<<<< HEAD
 >>>>>>> eb40f3eb8827e668c1949ca0c9c13db2f52fe4b4
+=======
+>>>>>>> upstream/task-state
         </div>
     );
 }
