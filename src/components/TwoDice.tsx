@@ -12,15 +12,8 @@ export function d6(): number {
 }
 
 export function TwoDice(): JSX.Element {
-    const [dieLeft, changeDieLeft] = useState<number>(d6());
-    const generateDieRight = (): number => {
-        let initialDieRight = d6();
-        while (initialDieRight === dieLeft) {
-            initialDieRight = d6();
-        }
-        return initialDieRight;
-    };
-    const [dieRight, changeDieRight] = useState<number>(generateDieRight);
+    const [dieLeft, changeDieLeft] = useState<number>(3);
+    const [dieRight, changeDieRight] = useState<number>(4);
     function rollLeft(): void {
         changeDieLeft(d6());
     }
