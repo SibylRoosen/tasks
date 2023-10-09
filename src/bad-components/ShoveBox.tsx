@@ -14,11 +14,11 @@ function ShoveBoxButton({
 }
 
 function MoveableBox({
-    position,
-    setPosition
-}: {
+    position
+}: /*setPosition*/
+{
     position: number;
-    setPosition: (newPosition: number) => void;
+    /*setPosition: (newPosition: number) => void;*/
 }) {
     return (
         <div
@@ -49,7 +49,7 @@ export function ShoveBox(): JSX.Element {
                 ></ShoveBoxButton>
                 <MoveableBox
                     position={position}
-                    setPosition={setPosition}
+                    /*setPosition={setPosition}*/
                 ></MoveableBox>
             </div>
         </div>
