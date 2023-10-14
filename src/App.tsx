@@ -1,4 +1,5 @@
 import React from "react";
+import { Form } from "react-bootstrap";
 import Puck from "./Puck.jpeg";
 import "./App.css";
 import { Button, Col, Container, Row } from "react-bootstrap";
@@ -56,9 +57,8 @@ function App(): JSX.Element {
                 automatically reload. Hello World
             </p>
             <hr></hr>
-<<<<<<< HEAD
             <DoubleHalf></DoubleHalf>
-=======
+            <hr></hr>
             <CheckAnswer expectedAnswer="42"></CheckAnswer>
             <hr></hr>
             <GiveAttempts></GiveAttempts>
@@ -73,7 +73,6 @@ function App(): JSX.Element {
             ></MultipleChoiceQuestion>
             <hr></hr>
             {/* <DoubleHalf></DoubleHalf> */}
->>>>>>> upstream/task-forms
             <hr></hr>
             <ChooseTeam></ChooseTeam>
             <hr></hr>
