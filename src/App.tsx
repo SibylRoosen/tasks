@@ -17,6 +17,7 @@ import { GiveAttempts } from "./form-components/GiveAttempts";
 import { EditMode } from "./form-components/EditMode";
 import { MultipleChoiceQuestion } from "./form-components/MultipleChoiceQuestion";
 import { ChangeColor } from "./form-components/ChangeColor";
+import { Quizzer } from "./quizzer/Quizzer";
 
 function App(): JSX.Element {
     return (
@@ -24,39 +25,7 @@ function App(): JSX.Element {
             <header className="App-header">
                 UD CISC275 with React Hooks and TypeScript
             </header>
-            <h1>This is Sibyl Roosens Heading</h1>
-            <Container>
-                <Row>
-                    <Col>
-                        <img
-                            src={Puck}
-                            width="400"
-                            height="600"
-                            alt="A picture of my cat Puck"
-                        />
-                        <div id="rectangle"></div>
-                    </Col>
-                    <Col>
-                        <p>The animals I care about</p>
-                        <ol>
-                            <li>Cats</li>
-                            <li>Octupuses</li>
-                            <li>Nothing else</li>
-                        </ol>
-                        <div id="rectangle"></div>
-                    </Col>
-                </Row>
-            </Container>
-
-            <Button onClick={() => console.log("Hello World!")}>
-                Log Hello World
-            </Button>
-            <p>
-                Edit <code>src/App.tsx</code> and save. This page will
-                automatically reload. Hello World
-            </p>
-            <hr></hr>
-            <DoubleHalf></DoubleHalf>
+            <Quizzer></Quizzer>
             <hr></hr>
             <CheckAnswer expectedAnswer="42"></CheckAnswer>
             <hr></hr>
